@@ -8,13 +8,21 @@
 	<script type="text/paperscript" canvas="myCanvas">
 	
 
-	for(var i=0;i<=1000;i=i+100){
-	for(var j=0;j<=1000;j=j+100){
-	var mycircle = new Path.Circle(new Point(i,j),20);
-	mycircle.fillColor='green';
+function onKeyDown(event) {
+
+
+	var maxPoint = new Point(view.size.width, view.size.height);
+	var randomP=Point.random();
+	var point=maxPoint*randomP;
+	console.log(maxPoint);
+	var myCircle = new Path.Circle((point), 15);
+	myCircle.fillColor = 'black';
+	console.log(view.size.width); 
+	console.log(view.size.height); 
+
 
 }
-}
+
 
 </script>
 
