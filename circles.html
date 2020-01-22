@@ -6,7 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="canvas.css">
 
 	<script type="text/paperscript" canvas="myCanvas">
-	
+
+
+	var circles=[];
+
 
 function onKeyDown(event) {
 
@@ -15,14 +18,23 @@ function onKeyDown(event) {
 	var randomP=Point.random();
 	var point=maxPoint*randomP;
 	console.log(maxPoint);
-	var myCircle = new Path.Circle((point), 15);
-	myCircle.fillColor = 'black';
-	console.log(view.size.width); 
-	console.log(view.size.height); 
+	var myCircle = new Path.Circle((point), 500);
+	myCircle.fillColor = 'orange';
+	circles.push(myCircle);
+
 
 
 }
 
+
+
+function onFrame(event){
+
+for(var i=0 ; i< circles.length;i++){
+	circles[i].fillColor.hue+=1;
+	circles[i].scale(.9);
+}
+}
 
 </script>
 
